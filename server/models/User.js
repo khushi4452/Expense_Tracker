@@ -20,8 +20,12 @@ const UserSchema = new Schema({
     dob: {
         type: Date,
         required: true , 
-    },
+    }, 
 
+    
+
+}, {
+    timestamps: true,
 });
 
 const User = model("user", UserSchema);
