@@ -47,7 +47,7 @@ app.post('/signup', async (req, res) => {
       message: 'Signup successful',
       data: savedUser,
     });
-    
+
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -57,8 +57,29 @@ app.post('/signup', async (req, res) => {
   }
 });
 
-app.post('/login', (req, res) => {
-  // Login logic goes here
+app.post('/login',async (req, res) => {
+ const { email, password} = req.body;
+
+ const user =  await User.findOne({
+  email : email,
+  password : password
+ });
+
+
+ if(user){
+  return res.json ({
+    success: true,
+    message :"Login successfully",
+    data: user
+  })
+ }
+ else {
+  return res.json ({
+    success: false,
+    message: "Inavlid credentials",
+    data:null
+  })
+ }
 });
 
 const PORT = process.env.PORT || 5000;
