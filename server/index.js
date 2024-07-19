@@ -7,11 +7,28 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
+
 app.use(cors());
 
 
+const connectDB = async () =>{
+  const conn = await mongoose.connect(process.env.MONGODB_URL)
+  if (conn) {
+    console.log(`MongoDB connected successfully😊😊😊`)
+  }
+};
+
+connectDB();
+
+app.get('/',(req,res)=>{
+  res.json({
+    message:`Welcome to the expense tracker`
+  })
+})
+
 const PORT = process.env.PORT || 5000;
 
+
 app.listen(PORT, ()=>{
-  console.log(`server is runnning on port ${PORT}`);
+  console.log(`server is running on port ${PORT}`);
 })
