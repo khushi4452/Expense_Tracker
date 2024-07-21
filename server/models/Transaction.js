@@ -26,6 +26,7 @@ enum: ["credit" , "debit"],
 user:{
  type: Schema.Types.ObjectId,
  ref: "User",
+ required: "true",
 }
 
 },{
