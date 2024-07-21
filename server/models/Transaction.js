@@ -1,6 +1,11 @@
 import {Schema , model } from "mongoose";
-const trensactionSchema = new Schema({
+const transactionSchema = new Schema({
 amount:{
+  title:{
+    type: String,
+    required : true,
+  
+  },
   type: Number,
   required : true,
 
@@ -8,7 +13,7 @@ amount:{
 category:{
   type: String ,
   default: "Others",
-  required: "true",
+  
 
 },
 
@@ -27,7 +32,7 @@ user:{
   timestamps: true,
 });
 
-const Transaction = model("Transaction ", trensactionSchema);
+const Transaction = model("Transaction ", transactionSchema);
 
 export default Transaction;
 
