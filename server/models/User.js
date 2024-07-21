@@ -1,33 +1,29 @@
-import mongoose from 'mongoose';
+import {Schema , model } from "mongoose";
 
-const { Schema, model, models } = mongoose;
-
-const UserSchema = new Schema(
-  {
-    fullName: {
-      type: String,
-      required: true,
-    },
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    password: {
-      type: String,
-      required: true,
-    },
-    dob: {
-      type: Date,
-      required: true,
-    },
+const userSchema = new Schema ({
+  fullname: {
+    type : String ,
+    required : true ,
+  } ,
+  email : {
+    type : String ,
+    required : true , 
+    unique : true,
+  } ,
+  password: {
+    type : String ,
+    required : true ,
   },
-  {
-    timestamps: true,
-  }
-);
+  dob: {
+    type : String ,
+    required : true ,
+  },
 
-// Check if the model already exists before defining it
-const User = models.User || model('User', UserSchema);
+},{
+  timestamps: true,
+});
+
+const user = model("User", userSchema);
+
 
 export default User;

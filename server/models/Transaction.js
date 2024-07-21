@@ -1,29 +1,33 @@
-import { Schema, model } from "mongoose";
+import {Schema , model } from "mongoose";
+const trensactionSchema = new Schema({
+amount:{
+  type: Number,
+  required : true,
 
-const transactionSchema = new Schema({
+},
+category:{
+  type: String ,
+  default: "Others",
+  required: "true",
 
-  title: {
-    type: String,
-    required: true,
-  },
-  
-  amount: {
-    type: Number,
-    required: true,
-  },
-  category: {
-    type: String, 
-    default: "others",
-  },
-  type: {
-    type: String,
-    enum: ["debit", "credit"], 
-  },
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-  },
+},
+
+type: {
+  type: String,
+enum: ["credit" , "debit"],
+},
+
+
+user:{
+ type: Schema.Types.ObjectId,
+ ref: "User",
+}
+
+},{
+  timestamps: true,
 });
 
-const Transaction = model("Transaction", transactionSchema);
+const Transaction = model("Transaction ", trensactionSchema);
+
 export default Transaction;
+
