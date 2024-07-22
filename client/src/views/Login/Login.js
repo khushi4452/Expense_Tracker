@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import toast, {Toaster} from 'react-hot-toast'
 
+
+
+
 function Login() {
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -13,7 +17,9 @@ function Login() {
       email: email,
       password: password
     })
-    if(response.data.success){
+
+
+ if(response.data.success){
       toast.success(response.data.message)
 
       localStorage.setItem('currentUser', JSON.stringify(response.data.data))
@@ -28,39 +34,46 @@ function Login() {
     }
   }
 
+
   return (
-    <div>
-      <h1 className='auth-heading'>User Login</h1>
+    
+    <div className='parent-container'>
+       
+       <div className="login-container">
+    <h2 >User Login</h2>
 
-      <form className='auth-form'>
-        <input
-          type='email'
-          placeholder='Email'
-          className='user-input'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          />
+    <form >
+      <input
+        type='email'
+        placeholder='Email'
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        />
 
-        <input
-          type='password'
-          placeholder='Password'
-          className='user-input'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          />
+      <input
+        type='password'
+        placeholder='Password'
+        
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        />
 
-        <button
-          type='button'
-          onClick={loginNow}
-          className='btn-auth'>
-          Login
-        </button>
-      </form>
+      <button
+        type='button'
+        onClick={loginNow}
+        >
+        Login
+      </button>
+    </form>
 
-      <Link to='/signup' className='auth-link'>Don't have an account? Signup</Link>
+    <Link to='/signup' >Don't have an account?<b><u>Signup</u></b> </Link>
 
-      <Toaster />
-    </div>
+  
+
+    <Toaster />
+  </div>
+  </div>
+   
   )
 }
 

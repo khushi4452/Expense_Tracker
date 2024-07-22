@@ -1,65 +1,110 @@
-.home-greeting{
-    font-size: 20px;
+
+
+
+   /* General styles */
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
   
-  .home-heading{
-    color: #0084ff;
-    font-size: 15px;
-    margin: 0;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
   }
   
-  .home-logout{
-    position: fixed;
-    top: 10px;
-    right: 10px;
+  /* Greeting and heading */
+  .home-greeting {
+    color: #333;
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .home-heading {
+    color: #d11f1f;
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  /* Logout button */
+  .home-logout {
+    display: block;
+    text-align: center;
+    background-color: #ab1474;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 auto 40px;
+    width: 100px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 12px;
+    transition: background-color 0.3s;
+    
   }
   
-  .net-transactions-values{
+  .home-logout:hover {
+    background-color: #ab1474;
+  
+  }
+  
+  /* Net transactions */
+  .net-transactions-values {
     display: flex;
     justify-content: space-around;
-    margin: 10px auto;
+    margin-bottom: 40px;
   }
   
-  .net-transactions-value-item{
-    width: 150px;
-    border: 1px solid #0084ff;
-    padding: 5px;
-    border-radius: 5px;
-  }
-  
-  .net-transactions-value-title{
-    display: block;
-    text-align: center;
-  }
-  
-  .net-transactions-value-amount{
-    display: block;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .transactions-container{
-    max-height: 200px;
-    overflow-y: scroll;
-  }
-  
-  .add-transaction{
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    height: 20px;
-    width: 20px;
+  .net-transactions-value-item {
     background-color: #fff;
-    padding: 5px;
-    border-radius: 50%;
-    border: 2px double #0084ff;
-    cursor: pointer;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 150px;
   }
   
-  .add-transaction:hover{
-    background-color: #cce6ff;
+  .net-transactions-value-amount {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .net-transactions-value-title {
+    color: #777;
+    font-size: 1em;
+  }
+  
+  /* Transactions container */
+  .transactions-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+  }
+  
+  /* Add transaction button */
+  .add-transaction {
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .add-transaction:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Toaster notifications */
+  .Toaster {
+    position: fixed;
+    top: 20px;
+    right: 20px;
   }

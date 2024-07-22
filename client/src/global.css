@@ -1,16 +1,16 @@
 .user-input{
     display: block;
-    margin: 16px auto;
+    margin: 20px auto;
     width: 100%;
     border: 1px solid ;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 2px 5px;
   }
   
   .auth-form{
-    width: 250px;
-    border: 3px double #0084ff;
-    padding: 30px;
+    width: 300px;
+    border: 1px double #0084ff;
+    padding: 50px;
     display: block;
     margin: 0 auto;
     border-radius: 5px;
@@ -19,8 +19,8 @@
   
   .auth-heading{
     text-align: center;
-    font-size: 20px;
-    color: #0084ff;
+    font-size: 30px;
+    color: #207dd4;
   }
   
   
@@ -30,22 +30,23 @@
   
   
   .btn-auth{
-    background-color: #0084ff;
+    background-color: #3ad92b;
     color: white;
     padding: 5px 20px;
     border-radius: 20px;
     border: none;
     cursor: pointer;
+ 
   }
   
   .btn-auth:hover{
-    transition: 0.3s;
-    background-color: #0056b3;
+    transition: 0.4s;
+    background-color: green;
   }
   
   .auth-link{
     text-align: center;
     display: block;
-    margin-top: 10px;
-    font-size: 14px;
+    margin-top: 15px;
+    font-size: 19px;
   }

@@ -1,3 +1,4 @@
+
 import toast, {Toaster} from "react-hot-toast";
 import "./TransactionCard.css";
 import axios from "axios";
@@ -13,7 +14,8 @@ function TransactionCard({ _id, title, amount, category, type, createdAt, loadTr
   }
 
   return (
-    <div className="transaction-card">
+  
+       <div className="transaction-card">
       <h1 className="transaction-card-title">
         {title}
       </h1>
@@ -38,6 +40,8 @@ function TransactionCard({ _id, title, amount, category, type, createdAt, loadTr
       </button>
       <Toaster />
     </div>
+   
+   
   )
 }
 

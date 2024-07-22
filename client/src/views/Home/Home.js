@@ -3,7 +3,7 @@ import "./Home.css"
 import toast, {Toaster} from 'react-hot-toast'
 import axios from 'axios'
 import TransactionCard from '../../components/Transaction/TransactionCard'
-
+import ImgAdd from "./add.png"
 import { Link } from 'react-router-dom'
 
 function Home() {
@@ -125,7 +125,9 @@ function Home() {
         }
       </div>
 
-  
+      <Link to='/add-transaction'>
+        <img src={ImgAdd} alt='Add Transaction' className='add-transaction' />
+      </Link>
 
       <Toaster />
     </div>
